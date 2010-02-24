@@ -1,0 +1,527 @@
+pdnsd (1.2.7-par-1.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix pending l10n issues. Debconf translations:
+    - Japanese (Hideki Yamane (Debian-JP)).  Closes: #521637
+    - Spanish (Francisco Javier Cuadrado).  Closes: #570198
+    - Italian (Vincenzo Campanella).  Closes: #570746
+    - Slovak (Ivan Masár).  Closes: #570945
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 24 Feb 2010 22:34:49 +0100
+
+pdnsd (1.2.7-par-1.1) unstable; urgency=low
+
+  * Non-maintainer upload to fix release goal.
+  * Correct init.d script dependencies (Closes: #542349).
+
+ -- Petter Reinholdtsen <pere@debian.org>  Thu, 24 Sep 2009 12:25:41 +0200
+
+pdnsd (1.2.7-par-1) unstable; urgency=low
+
+  * New upstream release.
+  * Do not start pdnsd during the early stages of boot, especially not before
+    networking (Closes: #465693).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sat, 15 Sep 2007 17:16:37 +0200
+
+pdnsd (1.2.6-par-11) unstable; urgency=high
+
+  * Follow-up for CVE-2008-1447: activate port-randomization, do not trust the
+    kernel for it (Closes: #502275).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Wed, 15 Oct 2008 10:02:52 +0200
+
+pdnsd (1.2.6-par-10) unstable; urgency=high
+
+  * Add patches/0005-fix-for-CVE-2008-4194.patch for CVE-2008-4194.
+    (Closes: #500910).
+  * Document where the two default configuration are in README.Debian
+    (Closes: #499984).
+  * Update turkish translation thanks to Mert Dirik (Closes: #490047).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 05 Oct 2008 09:54:52 +0200
+
+pdnsd (1.2.6-par-9) unstable; urgency=low
+
+  * Change the debconf template default to Manual to allow smooth migrations
+    from stable (Closes: #494652).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Tue, 12 Aug 2008 17:05:59 +0200
+
+pdnsd (1.2.6-par-8) unstable; urgency=low
+
+  [ Christian Perrier ]
+  * Debconf translations:
+    - Dutch. Closes: #450980
+    - Finnish. Closes: #458260
+    - Basque. Closes: #481907
+
+  [ Pierre Habouzit ]
+  * Update Vcs-* headers.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 08 Jun 2008 19:58:47 +0200
+
+pdnsd (1.2.6-par-7) unstable; urgency=low
+
+  * Gah don't use llvm, this is a mistake.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 27 Jan 2008 10:52:35 +0100
+
+pdnsd (1.2.6-par-6) unstable; urgency=low
+
+  * Don't wait on pdnsd if resolvconf isn't installed (closes: 462260).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sat, 26 Jan 2008 19:22:44 +0100
+
+pdnsd (1.2.6-par-5) unstable; urgency=low
+
+  * Add randomize_servers = on to pdnsd-recurse.conf, thanks to Peter Mann.
+    (closes: 459416).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 06 Jan 2008 13:29:25 +0100
+
+pdnsd (1.2.6-par-4) unstable; urgency=low
+
+  * debian/control:
+      + XS-Vcs-* -> Vcs-*.
+      + Fix Homepage field.
+  * debian/copyright: make machine parseable.
+  * packaging: use pristine-tar and git differently for the packaging.
+  * debian/patches: refresh.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sat, 24 Nov 2007 19:49:11 +0100
+
+pdnsd (1.2.6-par-3) unstable; urgency=low
+
+  * (debian/po):
+      + gl.po: new translation from Jacobo Tarrio.
+  * (src/dns_answer.c): Fix IPv6 support using better patch from Juliusz
+    Chroboczek (closes: 436988), needed for etch backports.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Fri, 12 Oct 2007 10:05:18 +0200
+
+pdnsd (1.2.6-par-2) unstable; urgency=low
+
+  * (debian/init.d, debian/resolvconf): Use clever parsing of pdnsd-ctl status
+    to guess which IP the server listens to, so that we pass the proper
+    options to resolvconf. (Closes: 443871)
+  * (debian/init.d): don't use resolvconf even when installed if pdnsd-ctl
+    status does not reports a configuration stanza with a resolvconf label.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 30 Sep 2007 13:53:46 +0200
+
+pdnsd (1.2.6-par-1) unstable; urgency=low
+
+  * New upstream release.
+  * Includes Dirk Armbrust's patch to fix pdnsd on ARM.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sat, 15 Sep 2007 17:16:37 +0200
+
+pdnsd (1.2.6-par~pre2-7) unstable; urgency=medium
+
+  * (debian/templates): Use better formated templates, thanks to
+    Christian Perrier (closes: 435781).
+
+  * (debian/po):
+      + pt.po: new translation from Ricardo Silva (closes: 435857).
+      + ru.po: new translation from Yuri Kozlov.
+      + vi.po: new translation from Clytie Siddall.
+      + sv.po: new translation from Daniel Nylander.
+      + fr.po: new translation from Christian Perrier (closes: 437025).
+      + de.po: new translation from Helge Kreutzmann.
+      + cs.po: new translation from Miroslav Kure.
+
+  * (src/dns_answer.c): Fix IPv6 support using patch from Juliusz Chroboczek
+    (closes: 436988), set urgency to medium.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Wed, 15 Aug 2007 09:54:40 +0200
+
+pdnsd (1.2.6-par~pre2-6) unstable; urgency=low
+
+  * (debian/*.conf): disable delegation_only for resolvconf modes, do it for
+    real this time.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Thu, 02 Aug 2007 14:14:56 +0200
+
+pdnsd (1.2.6-par~pre2-5) unstable; urgency=low
+
+  * Has worked for me for days, upload to unstable.
+  * (debian/*.conf): disable delegation_only for resolvconf modes.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Wed, 01 Aug 2007 22:02:38 +0200
+
+pdnsd (1.2.6-par~pre2-4) experimental; urgency=low
+
+  * (debian/init.d): fix init script when resolvconf isn't installed.
+    (Closes: 434317)
+  * (debian/pdnsd.conf): add delegation_only setup.
+
+  * Allow autoconfiguration of pdnsd (Closes: 374927):
+    + (debian/pdnsd-{recurse,resolvconf}.conf): add new default
+      configurations for standards setups (full recursive resolver and
+      resolvconf dependant resolver).
+    + (debian/po/*, debian/config, debian/postinst, debian/templates):
+      add debconf questions to select between usual way to configure pdnsd.
+    + (debian/init.d, debian/default): support automatic confugurations for
+      pdnsd.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Mon, 23 Jul 2007 14:31:28 +0200
+
+pdnsd (1.2.6-par~pre2-3) experimental; urgency=low
+
+  * (debian/rules): pass --with-target=bsd for kfreebsd.
+  * (src/helpers.c): if we are building against a glibc, use random and not
+    BSD arc4random.
+  * (Makefile.am): put @thread_CFLAGS@ in the proper place.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 22 Jul 2007 13:17:54 +0200
+
+pdnsd (1.2.6-par~pre2-1) experimental; urgency=low
+
+  * (debian/init.d): stop resolvconf _after_ pdnsd stopped to avoid endless
+    loop.
+  * (debian/copyright): upstream moved to GPLv3 or later.
+  * (debian/README.packaging): document how pdnsd is packaged.
+  * (debian/watch): include -par in the version now that debian version
+    matches upstream's.
+
+  * submitted upstream:
+     + (doc/pdnsd.8.in): Use \- for dash in manpage.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Fri, 20 Jul 2007 18:08:09 +0200
+
+pdnsd (1.2.5par-3) unstable; urgency=medium
+
+  * (debian/resolvconf): fix deadlock in resolvconf scripts when there is no
+    interface file (Closes: 434199). Thanks to Jindrich Makovicka for having
+    understood the problem, though a slightly different patch has been checked
+    in.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 22 Jul 2007 12:56:26 +0200
+
+pdnsd (1.2.5par-2) unstable; urgency=low
+
+  * Remove ppp.ip-up, as resolvconf does things better, and document it in
+    debian/NEWS (Closes: 147402, 249549, 248696, 322486).
+
+  * Update init.d a bit to handle remaining process more gracefully. Only
+    watch pdnsd process running under user pdnsd to avoid killing things that
+    aren't our own.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Wed, 18 Jul 2007 01:29:42 +0200
+
+pdnsd (1.2.5par-1) unstable; urgency=low
+
+  * Hijack unmaintained package (since 2005).
+  * New upstream release.
+  * Ack NMU (Closes: 392535).
+
+  * packaging updates:
+    + debian/compat set to 5.
+    + debian/rules: revamp, simplify, support noopt in DEB_BUILD_OPTIONS.
+    + add a debian/watch.
+    + rename etc.default.pdnsd into default so that dh_installinit picks it.
+    + remove useless debian/* files.
+
+  * debian/init.d:
+    + install init script in rcS.d as well (Closes: 384855, 405747).
+    + remove check for named, it's wrong.
+    + wait for pdnsd to be started properly (Closes: 388436).
+    + make init script lsb-compliant.
+
+  * debian/control:
+    + set Standards-Version to 3.7.2.
+    + add XS-Vcs headers.
+    + Bump debhelper depends to at least 5.
+    + Remove conflicts againt dnrd that does not exists anymore.
+    + Update description slightly.
+    + add a link to the Homepage.
+
+  * debian/resolvconf:
+    + never ever add 127.0.0.1 as an upstream name server (Closes: 397453).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Tue, 17 Jul 2007 12:47:00 +0200
+
+pdnsd (1.2.4par-0.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Check for bind named pidfile in initscript and do not
+    try to startup, otherwise pdnsd installation bails
+    out if named is running on the same host (Closes: #389609)
+  * add --no-create-home to adduser call.
+
+ -- Michael Ablassmeier <abi@debian.org>  Thu, 12 Oct 2006 08:18:52 +0200
+
+pdnsd (1.2.4par-0.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * New upstream release.
+    * Fixes a memory leak (CVE-2006-2076) and a buffer overflow
+      (CVE-2006-2077). (Closes: #368268)
+
+ -- Steinar H. Gunderson <sesse@debian.org>  Tue,  6 Jun 2006 15:51:27 +0200
+
+pdnsd (1.2.2par-1) unstable; urgency=low
+
+  * New upstream release (closes: #290281)
+
+ -- Takuo KITAME <kitame@debian.org>  Wed, 25 May 2005 11:53:24 +0900
+
+pdnsd (1.1.11par-1) unstable; urgency=low
+
+  * New upstream release (closes: #261674)
+  * fix postinst (closes: #217396)
+  * update resolvconf script (closes: #254768)
+  * update init.d script (closes: #252227)
+
+ -- Takuo KITAME <kitame@debian.org>  Thu, 29 Jul 2004 16:48:09 +0900
+
+pdnsd (1.1.10par-4) unstable; urgency=low
+
+  * Fix /etc/pdnsd.conf (closes: #251843)
+
+ -- Takuo KITAME <kitame@debian.org>  Tue,  1 Jun 2004 11:26:03 +0900
+
+pdnsd (1.1.10par-3) unstable; urgency=low
+
+  * really added pdnsd.8 (closes: #180033)
+
+ -- Takuo KITAME <kitame@debian.org>  Tue,  1 Jun 2004 11:17:21 +0900
+
+pdnsd (1.1.10par-2) unstable; urgency=low
+
+  * add pdnsd.8 (closes: #180033)
+  * fix resolvconf support (closes: #247946)
+
+ -- Takuo KITAME <kitame@debian.org>  Mon, 31 May 2004 16:29:50 +0900
+
+pdnsd (1.1.10par-1) unstable; urgency=low
+
+  * New upstream release (closes: #219832)
+  * Maintainer upload (closes: #223198, #222898, #220327)
+  * include doc/{html,txt} (closes: #236511)
+  * support resolvconf (closes: #215418)
+  
+ -- Takuo KITAME <kitame@debian.org>  Fri,  2 Apr 2004 15:26:04 +0900
+
+pdnsd (1.1.8b1par7-1.1) unstable; urgency=low
+
+  * NMU.
+  * fixed FTBFS because of errors in kernel headers. Closes: #223198
+  * update peer DNS-information at ppp/ip-up-time. Closes: #222898
+  * no more duplicate conffiles. Closes: #220327
+
+ -- Andreas Barth <aba@not.so.argh.org>  Fri, 13 Feb 2004 22:58:25 +0100
+
+pdnsd (1.1.8b1par7-1) unstable; urgency=low
+
+  * New upstream release (closes: #213284)
+  * use dh_installppp (closes: #212834)
+
+ -- Takuo KITAME <kitame@debian.org>  Tue, 30 Sep 2003 13:50:58 +0900
+
+pdnsd (1.1.8b1par6-1) unstable; urgency=low
+
+  * New upstream release (closes: #201123, #181814, #184732)
+  * include README.par (closes: #208884)
+  * fix default configuration file.
+    and changeable_ip is now supported by upstream source.
+    see also README.par (closes: #201599, #201960, #207924, #208242, #209334)
+  * --enable-tcp-queries (closes: #192915, #192916)
+
+ -- Takuo KITAME <kitame@debian.org>  Wed, 17 Sep 2003 17:07:20 +0900
+
+pdnsd (1.1.8b1par5-1) unstable; urgency=low
+
+  * New upstream release (closes: Bug#200925)
+
+ -- Takuo KITAME <kitame@debian.org>  Tue, 15 Jul 2003 12:55:37 +0900
+
+pdnsd (1.1.7a-3) unstable; urgency=low
+
+  * change maintainer addres to @debian.org
+  * applied patch to support changing DNS's IP on the fly. (closes: #155236)
+    Thanks to Marco Bodrato <bodrato@gulp.linux.it>.
+  * postinst: dd 2> /dev/null (closes: #168349)
+
+ -- Takuo KITAME <kitame@debian.org>  Mon, 25 Nov 2002 14:37:34 +0900
+
+pdnsd (1.1.7a-2) unstable; urgency=low
+
+  * debian/init.d: fix error on preinst (closes: #148349)
+
+ -- Takuo KITAME <kitame@northeye.org>  Wed, 29 May 2002 02:33:44 +0900
+
+pdnsd (1.1.7a-1) unstable; urgency=low
+
+  * New upstream release (closes: #147787, #93296)
+
+ -- Takuo KITAME <kitame@northeye.org>  Thu, 23 May 2002 04:24:38 +0900
+
+pdnsd (1.1.7-5) unstable; urgency=low
+
+  * depends on adduser (closes: #142888)
+
+ -- Takuo KITAME <kitame@northeye.org>  Wed, 24 Apr 2002 11:20:53 +0900
+
+pdnsd (1.1.7-4) unstable; urgency=low
+
+  * src/dns_answer.c:
+    add SO_REUSEADDR setsockopt() (closes: #108865)
+  * debian/0pdnsd-up: added for /etc/ppp/ip-up.d/ (closes: #141219)
+  * debian/init.d: generate disk cache file if it is broken.
+
+ -- Takuo KITAME <kitame@northeye.org>  Sun,  7 Apr 2002 02:30:11 +0900
+
+pdnsd (1.1.7-3) unstable; urgency=low
+
+  * debian/init.d:
+    - more sleep to restart.
+
+ -- Takuo KITAME <kitame@northeye.org>  Sun,  3 Feb 2002 22:15:19 +0900
+
+pdnsd (1.1.7-2) unstable; urgency=low
+
+  * debian/init.d:
+   - ps -p 2> /dev/null (closes: #131542)
+
+ -- Takuo KITAME <kitame@northeye.org>  Wed, 30 Jan 2002 23:52:33 +0900
+
+pdnsd (1.1.7-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Takuo KITAME <kitame@northeye.org>  Tue,  8 Jan 2002 14:35:50 +0900
+
+pdnsd (1.1.6-3) unstable; urgency=low
+
+  * debian/control:
+    - fixed typo in description (closes: #125224)
+  * debian/init.d:
+    - sleep 1 instead of sleep 2
+
+ -- Takuo KITAME <kitame@northeye.org>  Tue, 18 Dec 2001 08:33:19 +0900
+
+pdnsd (1.1.6-2) unstable; urgency=low
+
+  * init.d fix (closes: Bug#107873)
+  * --enable-isdn (closes: Bug#106474)
+
+ -- Takuo KITAME <kitame@northeye.org>  Wed,  8 Aug 2001 12:17:33 +0900
+
+pdnsd (1.1.6-1) unstable; urgency=low
+
+  * New upstream release
+  * It fixes Bug#101159 (closes: Bug#101159, Bug#102460)
+
+ -- Takuo KITAME <kitame@northeye.org>  Tue,  3 Jul 2001 10:05:10 +0900
+
+pdnsd (1.1.5-4) unstable; urgency=low
+
+  * Fix build dependency (closes: Bug#102426)
+  * build with dpkg-dev 1.9.10 (closes: Bug#102556)
+
+ -- Takuo KITAME <kitame@northeye.org>  Wed, 27 Jun 2001 10:00:51 +0900
+
+pdnsd (1.1.5-3) unstable; urgency=low
+
+  * put configuration tips if pdnsd-ctl fail.
+
+ -- Takuo KITAME <kitame@northeye.org>  Wed, 27 Jun 2001 01:46:19 +0900
+
+pdnsd (1.1.5-2) unstable; urgency=low
+
+  * Install pdnsd-ctl.8
+
+ -- Takuo KITAME <kitame@northeye.org>  Wed, 13 Jun 2001 16:06:09 +0900
+
+pdnsd (1.1.5-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Takuo KITAME <kitame@northeye.org>  Mon,  4 Jun 2001 17:35:14 +0900
+
+pdnsd (1.1.4-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Takuo KITAME <kitame@northeye.org>  Thu, 31 May 2001 19:01:23 +0900
+
+pdnsd (1.1.2.a-3) unstable; urgency=low
+
+  * Applied tcp queries patch (closes: Bug#89149)
+
+ -- Takuo KITAME <kitame@northeye.org>  Sat, 31 Mar 2001 02:36:20 +0900
+
+pdnsd (1.1.2.a-2) unstable; urgency=low
+
+  * fix #88496 strange progess message in /etc/init.d/pdnsd restart (closes: Bug#88496)
+
+ -- Takuo KITAME <kitame@northeye.org>  Mon,  5 Mar 2001 10:25:17 +0900
+
+pdnsd (1.1.2.a-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/init.d: maybe fixed pure or upgrade fail (closes: Bug#79158)
+  * debian/docs: remove INSTALL file (closes: Bug#86465)
+  * debian/rules: move pdnsd.conf.sample to doc/pdnsd/examples/ (closes: Bug#86468)
+  * debian/control: Conflicts: dnrd (closes: Bug#86858)
+  * debian/etc.default.pdnsd: added for more OPTIONS (closes: Bug#86471)
+
+ -- Takuo KITAME <kitame@northeye.org>  Wed, 28 Feb 2001 14:13:24 +0900
+
+pdnsd (1.1.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Takuo KITAME <kitame@northeye.org>  Fri, 26 Jan 2001 11:41:56 +0900
+
+pdnsd (1.1.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Takuo KITAME <kitame@northeye.org>  Tue, 28 Nov 2000 03:20:34 +0900
+
+pdnsd (1.1+0b2-2) unstable; urgency=low
+
+  * debian/init.d: added --oknodo to start-stop-daemon --start.
+    (closes: Bug#77674)
+
+ -- Takuo KITAME <kitame@northeye.org>  Thu, 23 Nov 2000 00:52:03 +0900
+
+pdnsd (1.1+0b2-1) unstable; urgency=low
+
+  * New upstream release
+  * don't install NULL cache if pdnsd.cache is already available on system.
+
+ -- Takuo KITAME <kitame@northeye.org>  Mon, 20 Nov 2000 06:29:39 +0900
+
+pdnsd (1.0.15-1) unstable; urgency=low
+
+  * New upstream release
+  * use nobody as uid when build time. (closes: Bug#75533)
+
+ -- Takuo KITAME <kitame@northeye.org>  Mon,  6 Nov 2000 16:06:36 +0900
+
+pdnsd (1.0.11-2) unstable; urgency=low
+
+  * debian/rules: remove --with-distribution=Debian (closes: Bug#74944)
+
+ -- Takuo KITAME <kitame@northeye.org>  Tue, 17 Oct 2000 19:47:42 +0900
+
+pdnsd (1.0.11-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/post{inst,rm}: add/del pdnsd userid. (closes: Bug#72092)
+  * debian/init.d: --oknodo at stop-part. (closes: Bug#72622)
+    -- -daemon -p at "restart|force-reload" (closes: Bug#72216)
+
+ -- Takuo KITAME <kitame@northeye.org>  Wed, 11 Oct 2000 04:40:36 +0900
+
+pdnsd (1.0.10-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Takuo KITAME <kitame@northeye.org>  Thu,  7 Sep 2000 23:38:31 +0900
+
+

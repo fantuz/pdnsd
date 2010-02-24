@@ -1,0 +1,3 @@
+usr/sbin
+usr/share/pdnsd
+etc/resolvconf/update.d

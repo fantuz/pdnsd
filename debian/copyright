@@ -1,0 +1,42 @@
+This package was downloaded from
+    (Current)  http://www.phys.uu.nl/~rombouts/pdnsd.html
+    (Original) http://home.t-online.de/home/Moestl/
+
+Files: debian/*
+Copyright:
+ © 2007 Pierre Habouzit <madcoder@debian.org>
+ © 2000-2007 Takuo KITAME <kitame@northeye.org>
+License: BSD
+ The Debian Packaging is under the BSD license.
+
+Files: src/debug.{h,c}, src/freebsd_netint_ip_icmp.h
+Copyright:
+ Copyright (C) 2001 Thomas Moestl
+License: BSD
+
+Files: *
+Copyright:
+ Copyright (C) 2000-2001 Thomas Moestl <tmoestl@gmx.net>
+ Copyright (C) 2002-2007 Paul A. Rombouts <p.a.rombouts@home.nl>
+License: GPL-3+
+ This file is part of the pdnsd package.
+ .
+ pdnsd is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3 of the License, or
+ (at your option) any later version.
+ .
+ pdnsd is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with pdnsd; see the file COPYING. If not, see
+ <http://www.gnu.org/licenses/>.
+
+On debian machines, a copy of the GPL license can be found in
+/usr/share/common-licenses/GPL-3
+
+On debian machines, a copy of the BSD license can be found in
+/usr/share/common-licenses/BSD

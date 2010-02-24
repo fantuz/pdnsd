@@ -1,0 +1,77 @@
+# Slovak translation of pdnsd.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the pdnsd package.
+# Ivan Masár <helix84@centrum.sk>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pdnsd\n"
+"Report-Msgid-Bugs-To: madcoder@debian.org\n"
+"POT-Creation-Date: 2007-08-03 14:16+0200\n"
+"PO-Revision-Date: 2010-02-22 13:45+0100\n"
+"Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "Use resolvconf"
+msgstr "Použiť resolvconf"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "Use root servers"
+msgstr "Použiť koreňové servery"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "Manual"
+msgstr "Ručná"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid "General type of pdnsd configuration:"
+msgstr "Všeobecný typ konfigurácie pdnsd:"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"Please select the pdnsd configuration method that best meets your needs."
+msgstr ""
+"Prosím, vyberte si spôsob konfigurácie pdnsd, ktorý najlepšie vyhovuje vašim "
+"potrebám."
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+" - Use resolvconf  : use informations provided by resolvconf.\n"
+" - Use root servers: make pdnsd behave like a caching, recursive DNS\n"
+"                     server.\n"
+" - Manual          : completely manual configuration. The pdnsd daemon\n"
+"                     will not start until you edit /etc/pdnsd.conf and\n"
+"                     /etc/default/pdnsd."
+msgstr ""
+" - Použiť resolvconf      : použiť informácie, ktoré poskytne resolvconf.\n"
+" - Použiť koreňové servery: aby sa pdnsd behave správal ako cachujúci\n"
+"                            rekurzívny DNS server.\n"
+" - Ručná                  : kompletne ručná konfigurácia. Démon pdnsd\n"
+"                            sa nespustí pokým neupravíte /etc/pdnsd.conf\n"
+"                            a /etc/default/pdnsd."
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"Note: If you already use a DNS server that listens to 127.0.0.1:53, you have "
+"to choose \"Manual\"."
+msgstr ""
+"Pozn.: Ak už používate DNS server, ktorý počúva na 127.0.0.1:53, musíte "
+"zvoliť „Ručná“."

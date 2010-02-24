@@ -1,0 +1,79 @@
+# translation of xd-pdnsd-eu.po to Euskara
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# xabier bilbao <xabidu@gmail.com>, 2008.
+# Piarres Beobide <pi@beobide.net>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: xd-pdnsd-eu\n"
+"Report-Msgid-Bugs-To: madcoder@debian.org\n"
+"POT-Creation-Date: 2007-08-03 14:16+0200\n"
+"PO-Revision-Date: 2008-05-19 09:51+0200\n"
+"Last-Translator: Piarres Beobide <pi@beobide.net>\n"
+"Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "Use resolvconf"
+msgstr "'resolvconf' erabili"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "Use root servers"
+msgstr "Erro-zerbitzariak erabili"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "Manual"
+msgstr "Eskuz"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid "General type of pdnsd configuration:"
+msgstr "Pdnsd konfigurazio modu orokorra:"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"Please select the pdnsd configuration method that best meets your needs."
+msgstr "Mesedez hautatu zure beharrak hobe asetzen dituen konfigurazio mota."
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+" - Use resolvconf  : use informations provided by resolvconf.\n"
+" - Use root servers: make pdnsd behave like a caching, recursive DNS\n"
+"                     server.\n"
+" - Manual          : completely manual configuration. The pdnsd daemon\n"
+"                     will not start until you edit /etc/pdnsd.conf and\n"
+"                     /etc/default/pdnsd."
+msgstr ""
+" - 'resolvconf' erabili     : resolvconf-ek ematen duen informazioa "
+"erabili.\n"
+" - Erro-zerbitzariak erabili: pdnsd behartu ezazu DNS zerbitzari katxedun\n"
+"                              errekurtsiboa balitz bezala jokatzera.\n"
+" - Eskuz konfiguratu        : konfigurazio osoa eskuz. Pdnsd deabrua ez da\n"
+"                              abiatuko zuk /etc/pdnsd.conf eta /etc/default/"
+"pdnsd \n"
+"                              editatu arte."
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"Note: If you already use a DNS server that listens to 127.0.0.1:53, you have "
+"to choose \"Manual\"."
+msgstr ""
+"Oharra: \"Eskuz\" hautatu behar duzu dagoeneko 127.0.0.1:53entzuten duen DNS "
+"zerbitzari bat erabiltzen baduzu."

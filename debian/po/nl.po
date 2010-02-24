@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE 'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the  package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pdnsd\n"
+"Report-Msgid-Bugs-To: madcoder@debian.org\n"
+"POT-Creation-Date: 2007-08-03 14:16+0200\n"
+"PO-Revision-Date: 2007-10-26 19:26+0100\n"
+"Last-Translator: Bart Cornelis <cobaco@skolelinux.no>\n"
+"Language-Team: debian-l10n-dutch <debian-l10n-dutch@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Dutch\n"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "Use resolvconf"
+msgstr "resolvconf gebruiken"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "Use root servers"
+msgstr "root-servers gebruiken"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "Manual"
+msgstr "handmatig"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid "General type of pdnsd configuration:"
+msgstr "Algemeen type pdnsd-configuratie:"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"Please select the pdnsd configuration method that best meets your needs."
+msgstr "Welke configuratiemethode komt het best met uw noden overeen?"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+" - Use resolvconf  : use informations provided by resolvconf.\n"
+" - Use root servers: make pdnsd behave like a caching, recursive DNS\n"
+"                     server.\n"
+" - Manual          : completely manual configuration. The pdnsd daemon\n"
+"                     will not start until you edit /etc/pdnsd.conf and\n"
+"                     /etc/default/pdnsd."
+msgstr ""
+"- resolvconf gebruiken: gebruik informatie voorzien door resolvconf\n"
+"- root-servers gebruiken: pdnsd gedraagt zich als een recursieve\n"
+"                      cache-bijhoudende DNS-server.\n"
+"- handmatig: volledig handmatige configuratie. De pdnsd-\n"
+"                      achtergronddienst start pas eens u /etc/pdnsd.conf en\n"
+"                      /etc/default/pdnsd aangepast heeft."
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"Note: If you already use a DNS server that listens to 127.0.0.1:53, you have "
+"to choose \"Manual\"."
+msgstr ""
+"Opgelet: als u reeds een DNS-server heeft die luistert op 127.0.0.1:53 dient "
+"u 'handmatig' te kiezen."

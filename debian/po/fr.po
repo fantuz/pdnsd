@@ -1,0 +1,80 @@
+# French translation of pdnsd debconf templates
+# This file is distributed under the same license as the pdnsd package.
+#
+# Copyright (C) Christian Perrier <bubulle@debian.org>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: pdnsd\n"
+"Report-Msgid-Bugs-To: madcoder@debian.org\n"
+"POT-Creation-Date: 2007-08-03 14:16+0200\n"
+"PO-Revision-Date: 2007-08-04 09:14+0200\n"
+"Last-Translator: Christian Perrier <bubulle@debian.org>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "Use resolvconf"
+msgstr "Utiliser resolvconf"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "Use root servers"
+msgstr "Utiliser les serveurs racine"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "Manual"
+msgstr "Manuelle"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid "General type of pdnsd configuration:"
+msgstr "Type de configuration pour pdnsd :"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"Please select the pdnsd configuration method that best meets your needs."
+msgstr ""
+"Veuillez choisir la méthode de configuration de pdnsd qui est la plus "
+"adaptée à vos besoins :"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+" - Use resolvconf  : use informations provided by resolvconf.\n"
+" - Use root servers: make pdnsd behave like a caching, recursive DNS\n"
+"                     server.\n"
+" - Manual          : completely manual configuration. The pdnsd daemon\n"
+"                     will not start until you edit /etc/pdnsd.conf and\n"
+"                     /etc/default/pdnsd."
+msgstr ""
+" - Utiliser resolvconf : utiliser les informations fournies par\n"
+"                         le programme resolvconf ;  - Utiliser les serveurs "
+"racine :\n"
+"                         configurer pdnsd en serveur DNS cache et\n"
+"                         récursif ;\n"
+" - Manuelle            : configuration entièrement manuelle. Le\n"
+"                         démon pdnsd ne démarrera pas tant que vous\n"
+"                         n'aurez pas modifié les fichiers /etc/pdnsd.conf\n"
+"                         et /etc/default/pdnsd."
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"Note: If you already use a DNS server that listens to 127.0.0.1:53, you have "
+"to choose \"Manual\"."
+msgstr ""
+"Veuillez noter que si vous utilisez déjà un serveur DNS à l'écoute sur "
+"127.0.0.1:53, vous devez choisir la configuration manuelle."

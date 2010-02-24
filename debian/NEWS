@@ -1,0 +1,8 @@
+pdnsd (1.2.5par-2) unstable; urgency=low
+
+  As of pdnsd 1.2.5par-2 ip-up.d scripts are not used anymore. If you want to
+  configure your pdnsd with ppp interfaces, either use a static config, or
+  resolvconf that has a better implementation than the old ip-up.d/pdnsd
+  script.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Tue, 17 Jul 2007 13:36:02 +0200

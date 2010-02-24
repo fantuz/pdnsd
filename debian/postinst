@@ -1,0 +1,42 @@
+#!/bin/sh -e
+
+default_set_var() {
+    sed -i -e "s/^\s*${1}\s*=\s*[^#]*/${1}=${2}/" /etc/default/pdnsd
+}
+
+if test "$1" = "configure"; then
+    . /usr/share/debconf/confmodule
+    db_version 2.0
+    db_title pdnsd
+
+    db_get pdnsd/conf || true
+    case "$RET" in
+        "Use resolvconf")
+            default_set_var START_DAEMON yes
+            default_set_var AUTO_MODE    resolvconf
+            ;;
+        "Use root servers")
+            default_set_var START_DAEMON yes
+            default_set_var AUTO_MODE    recurse
+            ;;
+        *)
+            default_set_var AUTO_MODE    ""
+            ;;
+    esac
+
+    db_stop
+
+    if ! getent passwd pdnsd > /dev/null; then
+        adduser --quiet --system --ingroup proxy --no-create-home --home /var/cache/pdnsd pdnsd
+    fi
+
+    if [ ! -f /var/cache/pdnsd/pdnsd.cache ];then
+        dd if=/dev/zero of=/var/cache/pdnsd/pdnsd.cache bs=1 count=4 2> /dev/null
+    fi
+
+    chown -R pdnsd:proxy /var/cache/pdnsd
+fi
+
+#DEBHELPER#
+
+exit 0

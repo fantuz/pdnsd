@@ -1,0 +1,24 @@
+#! /bin/sh -e
+
+if test -r /etc/default/pdnsd; then
+    . "/etc/default/pdnsd"
+fi
+
+. /usr/share/debconf/confmodule
+db_version 2.0
+db_title pdnsd
+
+case "$AUTO_MODE" in
+    resolvconf)
+        db_set pdnsd/conf "Use resolvconf"
+        ;;
+    recurse)
+        db_set pdnsd/conf "Use root servers"
+        ;;
+    *) ;;
+esac
+
+db_input high pdnsd/conf || true
+db_go
+
+exit 0

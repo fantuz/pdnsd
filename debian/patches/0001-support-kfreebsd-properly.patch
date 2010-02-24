@@ -1,0 +1,48 @@
+From e1a404ab80cc8dea83f1ed3a30235091e64fc367 Mon Sep 17 00:00:00 2001
+From: Pierre Habouzit <madcoder@debian.org>
+Date: Sat, 15 Sep 2007 16:58:53 +0200
+Subject: [PATCH 1/3] support kfreebsd properly
+
+Signed-off-by: Pierre Habouzit <madcoder@debian.org>
+---
+ src/Makefile.am |    3 ++-
+ src/helpers.c   |    2 +-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/src/Makefile.am b/src/Makefile.am
+index a5e3100..2e84127 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -2,7 +2,7 @@
+ 
+ sbin_PROGRAMS = pdnsd
+ 
+-pdnsd_CFLAGS = -DCONFDIR="\"@sysconfdir@\"" @thread_CFLAGS@
++pdnsd_CFLAGS = -DCONFDIR="\"@sysconfdir@\""
+ 
+ pdnsd_SOURCES = conf-parser.c conff.c consts.c debug.c dns.c dns_answer.c \
+ 	dns_query.c error.c helpers.c icmp.c list.c main.c netdev.c rr_types.c \
+@@ -11,6 +11,7 @@ pdnsd_SOURCES = conf-parser.c conff.c consts.c debug.c dns.c dns_answer.c \
+ 	dns_query.h error.h helpers.h icmp.h ipvers.h list.h netdev.h \
+ 	rr_types.h servers.h status.h thread.h cache.h hash.h pdnsd_assert.h \
+ 	freebsd_netinet_ip_icmp.h
++pdnsd_LDADD = @thread_CFLAGS@
+ 
+ ## Try to do this last
+ 
+diff --git a/src/helpers.c b/src/helpers.c
+index e40c546..ff573c6 100644
+--- a/src/helpers.c
++++ b/src/helpers.c
+@@ -432,7 +432,7 @@ const char *pdnsd_a2str(pdnsd_a *a, char *buf, int maxlen)
+ 
+ /* Appropriately set our random device */
+ #ifdef R_DEFAULT
+-# if (TARGET == TARGET_BSD) && !defined(__NetBSD__)
++# if (TARGET == TARGET_BSD) && !defined(__NetBSD__) && !defined(__GLIBC__)
+ #  define R_ARC4RANDOM 1
+ # else
+ #  define R_RANDOM 1
+-- 
+1.6.1.2.461.g5bad6
+

@@ -1,0 +1,16 @@
+Template: pdnsd/conf
+Type: select
+__Choices: Use resolvconf, Use root servers, Manual
+Default: Manual
+_Description: General type of pdnsd configuration:
+ Please select the pdnsd configuration method that best meets your needs.
+ .
+  - Use resolvconf  : use informations provided by resolvconf.
+  - Use root servers: make pdnsd behave like a caching, recursive DNS
+                      server.
+  - Manual          : completely manual configuration. The pdnsd daemon
+                      will not start until you edit /etc/pdnsd.conf and
+                      /etc/default/pdnsd.
+ .
+ Note: If you already use a DNS server that listens to 127.0.0.1:53,
+ you have to choose "Manual".

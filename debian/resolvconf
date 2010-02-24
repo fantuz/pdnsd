@@ -1,0 +1,58 @@
+#!/bin/bash
+# Need bash because we use ${foo/bar/baz} feature
+#
+# Script to update the resolver list for pdnsd
+#
+# N.B.: Resolvconf may run us even if pdnsd is not running.
+#
+# Assumption: On entry, PWD contains the resolv.conf-type files
+#
+# Depends: resolvconf (>= 1.14)
+#
+# Requires server section in /etc/pdnsd.conf with label="resolvconf"
+#
+# Licensed under the GNU GPL.  See /usr/share/common-licenses/GPL.
+#
+# History
+# May 2004 - June 2004: Written by Thomas Hood <jdthood@yahoo.co.uk>
+
+set -e
+
+[ -x /usr/sbin/pdnsd-ctl ] || exit 0
+[ -x /lib/resolvconf/list-records ] || exit 1
+[ -e /var/cache/pdnsd/pdnsd.status ] || exit 0
+
+PATH=/bin:/sbin
+
+uniquify()
+{
+	RSLT=""
+	while [ "$1" ] ; do
+		for E in $RSLT ; do
+			[ "$1" = "$E" ] && { shift ; continue 2 ; }
+		done
+		RSLT="${RSLT:+$RSLT
+}$1"
+		shift
+	done
+}
+
+server=$(/usr/sbin/pdnsd-ctl status|sed -ne '/^Global:$/,/^Server.*:$/s/.*Server ip.*: \(.*\)$/\1/p')
+if test "$server" = "0.0.0.0"; then server="127.0.0.1"; fi
+uniquify "`cat $(/lib/resolvconf/list-records) /dev/null            \
+            | sed -n -e 's/^[[:space:]]*nameserver[[:space:]]\+//p' \
+            | grep -v '^'$server'$'`"
+
+if [ -n "$RSLT" ] ; then
+	OUTPUT="$(/usr/sbin/pdnsd-ctl server resolvconf up "$RSLT" || :)"
+else
+	OUTPUT="$(/usr/sbin/pdnsd-ctl server resolvconf down || :)"
+fi
+
+# Convert newlines to spaces
+set -f # Disable pathname expansion
+OUTPUT="$(echo $OUTPUT)"
+
+OUTPUT="${OUTPUT/Opening socket \/var\/cache\/pdnsd\/pdnsd.status Succeeded}"
+[ -z "$OUTPUT" ] || echo "$OUTPUT"
+exit 0

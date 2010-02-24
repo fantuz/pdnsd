@@ -1,0 +1,37 @@
+From 1d6a28222643a7decff3a44eee21f3fcba387255 Mon Sep 17 00:00:00 2001
+From: Pierre Habouzit <madcoder@debian.org>
+Date: Fri, 12 Oct 2007 10:04:47 +0200
+Subject: [PATCH 2/3] Backward compatible ipv6 patch.
+
+Signed-off-by: Pierre Habouzit <madcoder@debian.org>
+---
+ src/dns_answer.c |   13 ++++++++++++-
+ 1 files changed, 12 insertions(+), 1 deletions(-)
+
+diff --git a/src/dns_answer.c b/src/dns_answer.c
+index 1085509..3644072 100644
+--- a/src/dns_answer.c
++++ b/src/dns_answer.c
+@@ -1325,7 +1325,18 @@ int init_udp_socket()
+ 
+ # ifdef ENABLE_IPV6
+ 	if (!run_ipv4) {
+-		if (setsockopt(sock,SOL_IPV6,IPV6_RECVPKTINFO,&so,sizeof(so))!=0) {
++		int rc;
++
++#ifdef IPv6_RECVPKTINFO
++		rc = setsockopt(sock,SOL_IPV6,IPV6_RECVPKTINFO,&so,sizeof(so));
++		if(rc < 0 && errno == ENOPROTOOPT)
++#endif
++#ifdef IPV6_2292PKTINFO
++			rc = setsockopt(sock,SOL_IPV6,IPV6_2292PKTINFO,&so,sizeof(so));
++		if(rc < 0 && errno == ENOPROTOOPT)
++#endif
++			rc = setsockopt(sock,SOL_IPV6,IPV6_PKTINFO,&so,sizeof(so));
++		if(rc < 0) {
+ 			log_error("Could not set options on udp socket: %s",strerror(errno));
+ 			close(sock);
+ 			return -1;
+-- 
+1.6.1.2.461.g5bad6
+

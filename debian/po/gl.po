@@ -1,0 +1,78 @@
+# Galician translation of pdnsd's debconf templates
+# This file is distributed under the same license as the pdnsd package.
+# Jacobo Tarrio <jtarrio@debian.org>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pdnsd\n"
+"Report-Msgid-Bugs-To: madcoder@debian.org\n"
+"POT-Creation-Date: 2007-08-03 14:16+0200\n"
+"PO-Revision-Date: 2007-09-30 19:34+0100\n"
+"Last-Translator: Jacobo Tarrio <jtarrio@debian.org>\n"
+"Language-Team: Galician <proxecto@trasno.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "Use resolvconf"
+msgstr "Usar resolvconf"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "Use root servers"
+msgstr "Usar os servidores raíz"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "Manual"
+msgstr "Manual"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid "General type of pdnsd configuration:"
+msgstr "Tipo xeral de configuración de pdnsd:"
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"Please select the pdnsd configuration method that best meets your needs."
+msgstr ""
+"Escolla o método de configuración de pdnsd que máis se axuste ás súas "
+"necesidades."
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+" - Use resolvconf  : use informations provided by resolvconf.\n"
+" - Use root servers: make pdnsd behave like a caching, recursive DNS\n"
+"                     server.\n"
+" - Manual          : completely manual configuration. The pdnsd daemon\n"
+"                     will not start until you edit /etc/pdnsd.conf and\n"
+"                     /etc/default/pdnsd."
+msgstr ""
+" - Usar resolvconf        : emprega a información que fornece resolvconf.\n"
+" - Usar os servidores raíz: fai que pdnsd funcione coma un servidor DNS\n"
+"                            recursivo con caché.\n"
+" - Manual                 : configuración totalmente manual. O servidor "
+"pdnsd\n"
+"                            non se ha iniciar ata que edite /etc/pdnsd.conf "
+"e\n"
+"                            /etc/default/pdnsd."
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+"Note: If you already use a DNS server that listens to 127.0.0.1:53, you have "
+"to choose \"Manual\"."
+msgstr ""
+"Nota: Se xa emprega un servidor DNS que escoita en 127.0.0.1:53, ten que "
+"escoller \"Manual\"."

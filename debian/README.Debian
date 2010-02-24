@@ -1,0 +1,13 @@
+/etc/pdnsd.conf
+===============
+
+pdnsd in Debian will default to AUTO_MODE, which will use
+configuration files in /usr/share/pdnsd/pdnsd-$AUTO_MODE,
+which contain resonable defaults for most cases.
+
+If you wish to customize the values, set up to MANUAL mode, and edit
+/etc/pdnsd.conf. You can copy the file from
+/usr/share/pdnsd/pdnsd-$AUTO_MODE to /etc/pdnsd.conf to use as a
+template.
+
+To set up MANUAL mode, remove the AUTO_MODE= definition in /etc/default/pdnsd.
